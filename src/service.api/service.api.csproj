@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Nethereum.Web3" Version="4.18.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\communication.api\communication.api.csproj" />
+    <ProjectReference Include="..\repository.api\repository.api.csproj" />
+    <ProjectReference Include="..\shared.api\shared.api.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "shared.Protos";
+
+package ethers;
+
+service GetWeather {
+	rpc Get(GetWeatherRequest) returns (GetWeatherResponse) {}
+}
+
+message GetWeatherRequest {
+
+}
+
+message GetWeatherResponse {
+	 int64 temperature = 1;
+}

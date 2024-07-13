@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:26878",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "worker": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "launchUrl": "weatherforecast",
+      "applicationUrl": "http://localhost:5181",
+      "environmentVariables": {
+        "PostgresConnectionStrings": "Host=localhost; Username=XXX; Password=XXX; Database=postgres; Port=5432;",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SepoliaRPC": "https://eth-sepolia.g.alchemy.com/v2/API-KEY"
+      }    
+    }
+  }
+}

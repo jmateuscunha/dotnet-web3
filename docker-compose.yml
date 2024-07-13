@@ -1,0 +1,39 @@
+version: "3"
+
+services:            
+    api:
+        container_name: api   
+        build: 
+            context: ./src
+            dockerfile: /presentation.api/Dockerfile
+        restart: always            
+        ports:
+          - 5107:5107
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5107    
+            - ApiIssuer= 123
+            - ApiAudience=abc
+            - ApiIssuerKey=xxx@$@%@%@#REFSDFSR#@RSDGDFGFDGFD643634#$@%%#$#$$#$%$#$#######
+            - PostgresConnectionStrings=Host=host.docker.internal; Username=postgres; Password=joao; Database=postgres; Port=5432;
+            - SepoliaRPC=https://eth-sepolia.g.alchemy.com/v2/API-KEY   
+            - EtherscanApiKey=XXX
+            - EtherscanUrl=https://api.etherscan.io
+    worker:
+        container_name: worker    
+        build: 
+            context: ./src
+            dockerfile: /worker.api/Dockerfile
+        restart: always            
+        ports:
+          - 5181:5181
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5181    
+            - ApiIssuer= 123
+            - ApiAudience=abc
+            - ApiIssuerKey=xxxx@$@%@%@#REFSDFSR#@RSDGDFGFDGFD643634#$@%%#$#$$#$%$#$#######
+            - PostgresConnectionStrings=Host=host.docker.internal; Username=postgres; Password=joao; Database=postgres; Port=5432;
+            - SepoliaRPC=https://eth-sepolia.g.alchemy.com/v2/API-KEY                      
+
+    
